@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+	<meta charset="UTF-8">
+	<title>WORKS</title>
+</head>
+
+
+<body>
+	<style>
+		body{
+			background-color: darkolivegreen
+		}
+		.container div{
+			float:left;
+			margin-bottom:20px
+		}
+		.header_text{
+			width:30%;
+			height:auto;
+		}
+		.works_table{
+			width:100%;
+			height:auto;
+			background-color: lightgray;
+			border-radius:10px 10px 10px 10px;
+		}
+		.photo_container{
+			width:100%;
+			height:auto;
+		}
+	</style>
+
+	<div class="container">
+
+		<div class="works_table">
+
+			<caption>Подробное описание выбранного пункта: </caption>
+
+			<table border=1 style="width:100%;">
+			<thead>
+				<tr>
+					<th> ДАТА </th>
+					<th> АВТО </th>
+					<th> КЛИЕНТ </th>
+					<th> РАБОТЫ </th>
+					<th> ПРИМЕЧАНИЕ </th>
+					<!--th> ССЫЛКА </th-->
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td> {{val[1]}} </td>
+					<td> {{val[2]}} </td>
+					<td> {{val[3]}} </td>
+					<td> {{val[4]}} </td>
+					<td> {{val[5]}} </td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div>
+	</div> <!--end container-->
+
+
+	<div class="photo_container">
+		<p>
+		{%for img in imgs%}
+			<img src = "{{img}}" width="10%" hspace="5px" border="5px">
+		{% endfor %}
+		</p>
+	</div>
+
+
+</body>

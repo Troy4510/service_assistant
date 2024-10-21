@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+	<meta charset="UTF-8">
+	<title>ASSIST</title>
+</head>
+
+
+<body>
+	<style>
+		body{
+			background-image: url(./static/dizelpank57.jpg);
+			background-size: auto, auto;
+			background-color: darkolivegreen
+		}
+		.container div{
+			float:left;
+			margin-bottom:20px
+		}
+		.header_text{
+			width:30%;
+			height:auto;
+		}
+		.works_table{
+			width:100%;
+			height:auto;
+			background-color: lightgray;
+			border-radius:10px 10px 10px 10px;
+		}
+	</style>
+
+	<div class="container">
+		<!--div class="header_text">
+			<h2>Мастерская "ЕвроНоль"</h2>
+		</div-->
+
+		<div class="works_table">
+			<caption>Список выполненных работ</caption>
+			<table border=1 style="width:100%;">
+			<thead>
+				<tr>
+					<th> N </th>
+					<th> ДАТА </th>
+					<th> АВТО </th>
+					<th> КЛИЕНТ </th>
+					<th> СТОИМОСТЬ </th>
+					<th> ОПЛАЧЕНО </th>
+					<th> ССЫЛКА </th>
+				</tr>
+			</thead>
+			<tbody>
+	
+				{%for work in works%}
+				<tr>
+					<td> {{work[0]}} </td>
+					<td> {{work[1]}} </td>
+					<td> {{work[2]}} </td>
+					<td> {{work[3]}} </td>
+					<td> {{work[6]}}</td>
+					<td> {{work[7]}} </td>
+					<td> <a href = "work/{{work[0]}}" /a> [---тыц-тыц---] </td>
+				</tr>
+				{% endfor %}
+				
+			</tbody>
+		</table>
+		<div>
+
+	</div> <!--end container-->
+
+</body>
