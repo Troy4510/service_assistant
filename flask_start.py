@@ -25,7 +25,8 @@ def work(num):
     if x == None: return render_template('error.html')
     else:
         car_num = x[2]
-        img_list = read_car(cars_folder, car_num)
+        date = x[1]
+        img_list = read_car(cars_folder, car_num, date)
         return render_template('work.html', val = x, imgs = img_list)
 
 
@@ -43,16 +44,19 @@ def read_cars_folder(car_folder):
                 print(f'file: {image}')               #и отобразить их
 
                 
-def read_car(cars_folder, car_num:str):
+def read_car(cars_folder, car_num:str, point_date):
     try:
         dates = os.listdir(cars_folder + '/' + car_num)
+        #print(dates)
         result = []
         for date in dates:                   
             images = os.listdir(cars_folder + '/' + car_num + '/' + date)
-            for image in images:
-                #result.append(cars_folder + '/' + car_num + '/' + date + '/' + image)
-                result.append('/static/cars' + '/' + car_num + '/' + date + '/' + image)
-            return result
+            print(cars_folder + '/' + car_num + '/' + date)
+            if date == point_date:
+                for image in images:
+                    #result.append(cars_folder + '/' + car_num + '/' + date + '/' + image)
+                    result.append('/static/cars' + '/' + car_num + '/' + date + '/' + image)
+        return result
     except: 
         return None
 

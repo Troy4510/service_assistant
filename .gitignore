@@ -2,3 +2,5 @@
 __pycache__
 sql_base.db
 cars
+config.ini
+tests
