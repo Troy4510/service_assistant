@@ -14,7 +14,7 @@ def menu(menu_select):
             -----
             1 - добавить запись в базу
             2 - просмотр всех записей (сокращенно)
-            3 - просмотр записи по номеру (подробно)
+            3 - просмотр записи по номеру (подробно)1
             4 - просмотр записей по дате
             5 - просмотр неоплаченных работ
             6 - редактирование записи
@@ -32,7 +32,8 @@ def menu(menu_select):
             other = input('Примечание (не обязательно): ')
             payment = int(input('Сумма к оплате, руб: '))
             duty = int(input('Фактически оплачено, руб: '))
-            os.mkdir(f'{cars_folder}/{car_number}')
+            if not os.path.exists(f'{cars_folder}/{car_number}'):
+                os.mkdir(f'{cars_folder}/{car_number}')
             os.mkdir(f'{cars_folder}/{car_number}/{date}')
             shutil.copy('MAIN/app/static/garage.png', f'{cars_folder}/{car_number}/{date}')
             data = (date, car_number, client, work, other, payment, duty)
